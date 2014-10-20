@@ -1,0 +1,15 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+Options -Indexes
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+# RewriteCond %{HTTP_HOST} ^(www.)?pinweibo.tk$ [NC]
+# RewriteCond %{REQUEST_URI} !^/friendstream/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /friendstream/$1
+RewriteCond %{HTTP_HOST} ^(www.)?pinweibo.tk$ [NC]
+RewriteRule ^(/)?$ friendstream/ [L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.php\ HTTP/ 
+RewriteRule ^(([^/]+/)*)index\.php$ http://www.%{HTTP_HOST}/ [R=301,NS,L]

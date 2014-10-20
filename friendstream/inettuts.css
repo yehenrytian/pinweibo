@@ -1,0 +1,22 @@
+
+html {
+  /*background: #352726 url("http://a1.twimg.com/profile_background_images/159094926/twitrounds-butterfly.jpg") fixed no-repeat;*/
+  background: #352726 url("../images/htcscenefull.JPG") fixed no-repeat;
+}
+
+/*** Main Positioning *********************************************************/
+
+#friendstreamwrapper {
+  color: #FFFFFF;
+  margin: 0px auto;
+  width: 1200px;
+  text-align: left;
+}
+
+/*** Sidenotes Components *****************************************************/
+
+#sidenotes,
+#footer {
+  background: #000;
+}
+

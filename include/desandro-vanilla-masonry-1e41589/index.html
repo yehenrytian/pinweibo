@@ -1,0 +1,102 @@
+---
+title: Vanilla Masonry
+layout: default
+category: homepage
+mini_bricks: 
+  - w1 h1
+  - w1 h1
+  - w1 h2
+  - w1 h1
+  - w2 h1
+  - w1 h2
+  - w1 h1
+  - w2 h2
+  - w2 h1
+  - w1 h1
+  - w2 h2
+  - w2 h1
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <title>FriendStream - Keep you updated of what is happening in your social networks</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Friendsteam is where you can get all your social network updates in one page" />
+    <meta name="keywords" content="twitter, facebook, google buzz, web 2.0, smartphone, social network, SNA, email" />
+    <meta name="author" content="Ye Henry Tian" />
+    <meta name="distribution" content="global" />
+    <meta name="robots" content="follow, all" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="2 days" />
+    <meta content="jaolb+4U3+k7xWefD1IT+pPv3Nevk/TJsQW8ZV3uXBI=" name="verify-v1" />
+    <link rel="shortcut icon" href="../images/fsicon2.png" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div id="container" class="clearfix">
+  
+  <div class="item big-text col2">
+    A dynamic layout script for
+    the flip-side of CSS floats<br />
+    <br />
+    &larr; View docs and demos
+  </div>
+  
+  <div class="item big-text">
+    Before: CSS Floats
+    <div class="mini">
+      {% for brick in page.mini_bricks %}
+        <div class="{{ brick }}">{{ forloop.index }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="item big-text">
+    After: Masonry
+    <div id="mini-container" class="mini">
+      {% for brick in page.mini_bricks %}
+        <div class="{{ brick }}">{{ forloop.index }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="item link">
+    <a href="masonry.min.js">Download the&nbsp;script masonry.min.js</a>
+  </div>
+  
+  <div class="item link">
+    <a href="http://meta.metafizzy.co/files/vanilla-masonry-site.zip">Download this project</a>
+  </div>
+  
+  <div class="item link">
+    <a href="https://github.com/desandro/vanilla-masonry">Vanilla Masonry on GitHub</a>
+  </div>
+  
+  <!-- <div class="item big-text loading">
+    <img src="http://i.imgur.com/6RMhx.gif" />
+    Loading Examples
+  </div> -->
+  
+</div> <!-- #container -->
+
+<!--<script src="{{ site.masonry_js }}"></script> -->
+<script src="masonry.min.js"></script>
+<script>
+  window.onload = function() {
+    
+    var miniWall = new Masonry( document.getElementById('mini-container'), {
+      columnWidth: 50,
+      foo: 'bar'
+    });
+    
+    var wall = new Masonry( document.getElementById('container'), {
+      columnWidth: 240
+    });
+    
+  };
+</script>
+
+</body>
+</html>
